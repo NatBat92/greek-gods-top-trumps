@@ -12,9 +12,14 @@
 </head>
 <body>
 
-  <!--Page title-->
+  <!--Page title + How to play-->
   <section>
     <h1>Welcome to Top Trumps: Greek Mythology</h1>
+    <div id="how-to-play">
+    <h3>How to play:</h3>
+    <p>Select the attribute you think will beat your opponent, then click compare cards to reveal your opponents card. To play the next round, click the next button.</p>
+    <p>The first person to hold all 20 cards wins the game.</p>
+    </div>
   </section>
 
   <!--Players cards and playing area-->
@@ -22,22 +27,71 @@
     <h2 id="p1-score">Player one score: 0</h2>
     <h2 id="p2-score">Player two score: 0</h2>
 
+    <form onsubmit="return compare()" action id="player1">
+
     <div id="p1-current">
       <h2>Player one's card</h2>
-      <div class="box"></div>
+      <div class="box">
+        <h3 id="p1-card-name">????</h3>
+        <table cellspacing = "1" cellpadding = "1" border = "0">
+          <tbody>
+            <tr>
+              <th>Power: </th>
+              <td>???</td>
+            </tr>
+            <tr>
+              <th>Magic: </th>
+              <td>???</td>
+            </tr>
+            <tr>
+              <th>Terror: </th>
+              <td>???</td>
+            </tr>
+            <tr>
+              <th>Wisdom: </th>
+              <td>???</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    <input id="compare-cards" value="Compare Cards" type="submit">
 
     <div id="p2-current">
       <h2>Player two's card</h2>
-      <div class="box"></div>
-    </div>
+      <div class="box">
+        <h3 id="p2-card-name">????</h3>
+        <table cellspacing = "1" cellpadding = "1" border = "0">
+          <tbody>
+            <tr>
+              <th>Power: </th>
+              <td>???</td>
+            </tr>
+            <tr>
+              <th>Magic: </th>
+              <td>???</td>
+            </tr>
+            <tr>
+              <th>Terror: </th>
+              <td>???</td>
+            </tr>
+            <tr>
+              <th>Wisdom: </th>
+              <td>???</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>  
+  </form>  
   </section>
 
-  <section>
+  <section>    
     <h2>Please click new game to begin</h2>
     <div id="buttons">
-      <button>New game</button>
-      <button>Reset</button>
+      <button id="new-game">New game</button>
+      <button id="reset-game">Reset</button>
     </div>
   </section>
 
