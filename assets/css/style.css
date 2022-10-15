@@ -1,0 +1,53 @@
+body {
+    background-color: #Eab03c;
+}
+
+h1 {
+    font-family: 'GFS Neohellenic', sans-serif;
+    font-size: 250%;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'GFS Neohellenic', sans-serif;
+    font-size: 175%;
+    text-align: center;
+}
+
+.box {
+    height: 350px;
+    width: 350px;
+    border-radius: 25px;
+    background-color: pink;
+    border: 5px solid #B970e4;
+    margin: 25px;
+}
+
+#p1-current, #p2-current {
+    display: inline-block;    
+}
+
+#game-section {
+    text-align: center;
+}
+
+button {
+    text-align: center;
+    background-color: pink;
+    border: 2px solid #B970e4;
+    font-size: 150%;
+    font-family: 'GFS Neohellenic', sans-serif;
+    border-radius: 25%;
+    padding: 15px;
+}
+
+#buttons {
+    text-align: center;
+}
+
+
+
+
+
+
+
