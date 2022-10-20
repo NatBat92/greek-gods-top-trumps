@@ -66,8 +66,19 @@ function GenerateHand (){
     //set computers cards
     //for (let m = 0; m < 10; m++){
      //   if (playerOnehand[m] =)
-    //}
+    }
+
+    let newGame = document.getElementById("new-game");
+    newGame.addEventListener ('click', () => {
+        newGame.style.display = 'none';
+    })
+
+    function resetGame() {
+        document.getElementById("reset-game").reset()
+    }
+
+    
     
 
-}
 
+//}

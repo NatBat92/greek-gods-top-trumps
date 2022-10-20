@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel="stylesheet">
-<title>Greek Gods Top Trumps</title>
+<!--<script src="assets/js/game.js"></script>-->
+  <title>Greek Gods Top Trumps</title>
 </head>
 <body>
 
@@ -18,10 +19,15 @@
     <h1>Welcome to Top Trumps: Greek Mythology</h1>
     <div id="how-to-play">
     <h3>How to play:</h3>
-    <p>Select the attribute you think will beat your opponent, then click compare cards to reveal your opponents card. To play the next round, click the next button.</p>
+    <p>Select the attribute you think will beat your opponent, then click the compare cards button to reveal your opponents card. If you win the hand then a point will be added to your score, if you lost that hand then a point will be given to your opponent. If a draw occurs then both players will be given a point. </p>
     <p>The person with the highest score wins!</p>
     </div>
   </section>
+
+    <div id="buttons">
+      <button id="new-game" input type="button" onclick="GenerateHand();">New Game</button>
+    </div>
+  
 
   <!--Players cards and playing area-->
   <section id="game-section">
@@ -56,10 +62,10 @@
         </table>
       </div>
     </div>
-    </form>
-
+    
     <input id="compare-cards" value="Compare Cards" type="submit">
-    <form id="player2">
+    <button id="reset-game" onclick="resetGame()">Reset</button>      
+
     <div id="p2-current">
       <h2>Player two's card</h2>
       <div class="box">
@@ -83,19 +89,11 @@
               <td>???</td>              
             </tr>
           </tbody>
-        </table>
-      </div>
-    </div>  
-  </form>  
-  </section>
-
-  <section>    
-    <h2>Please click new game to begin</h2>
-    <div id="buttons">
-      <button id="new-game" input type="button" onclick="GenerateHand();">New Game</button>
-      <button id="reset-game">Reset</button>
-    </div>
-  </section>
+        </table>        
+      </div>      
+    </div>    
+    </form>     
+  </section>  
 
   <script src="assets/js/game.js"></script>
 
