@@ -1,6 +1,6 @@
 // God  and mythical creature arrays
  
-var gods = new Array ();
+let gods = new Array ();
  
 gods[0] = ["hades", 100, 65, 90, 25];
 gods[1] = ["cronus", 50, 20, 30, 65];
@@ -29,56 +29,63 @@ function GenerateHand (){
 
     //generates 10 random numbers between 1 and 20
     let playerOneHand = [];
-    let playerOneCards = [];
-    let computerCards = [];
+    let playerOneCardStats = [];
+    let computerCardStats = [];
+    let computerHand = [];
     let i = 0;
     let j = 0;
     let card = 0;
+    
         for (i = 0; i < 10; i++) {
             card = Math.floor((Math.random() * 20) + 1);
             //console.log(card);
+            
             if (playerOneHand.includes(card)) { 
                 playerOneHand.pop;
-                i--; 
-                computerCards.push;
+                i--;
             } 
-            else {
-                playerOneHand.push(card);
+             else {
+                 playerOneHand.push(card);
             }   
+            
         }
         console.log(playerOneHand);
-    
+        
     //using above random numbers, corresponding index values of Gods array added to PlayerOneCards array
     for (j = 0; j < 10; j++){
         let cardNo = 0;
         cardNo = playerOneHand[j];
-        console.log(cardNo);
-        playerOneCards.push(gods[cardNo]);
-        console.log(playerOneCards);
+        //console.log(cardNo);
+        playerOneCardStats.push(gods[cardNo]);
+        //console.log(playerOneCardStats);
     }
     //set players first card
-    document.getElementById("p1CardName").innerHTML = playerOneCards[0][0];
-    document.getElementById("p1Power").innerHTML = playerOneCards[0][1];
-    document.getElementById("p1Magic").innerHTML = playerOneCards[0][2];
-    document.getElementById("p1Terror").innerHTML = playerOneCards[0][3];
-    document.getElementById("p1Wisdom").innerHTML = playerOneCards[0][4];
+    document.getElementById("p1CardName").innerHTML = playerOneCardStats[0][0];
+    document.getElementById("p1Power").innerHTML = playerOneCardStats[0][1];
+    document.getElementById("p1Magic").innerHTML = playerOneCardStats[0][2];
+    document.getElementById("p1Terror").innerHTML = playerOneCardStats[0][3];
+    document.getElementById("p1Wisdom").innerHTML = playerOneCardStats[0][4];
   
     //set computers cards
-    //for (let m = 0; m < 10; m++){
-     //   if (playerOnehand[m] =)
-    }
+   
+     for (let m = 0; m < 10; m++){
+         if (computerHand.includes(playerOneHand)) {
+            computerHand.pop
+            m--;
+         } else {
+             computerHand.push(computerHand)
+          }
+}
+         console.log(computerHand);
 
-    let newGame = document.getElementById("new-game");
+        }
+//}
+
+let newGame = document.getElementById("new-game");
     newGame.addEventListener ('click', () => {
         newGame.style.display = 'none';
     })
 
-    function resetGame() {
-        document.getElementById("reset-game").reset()
-    }
-
-    
-    
-
-
-//}
+function resetGame() {
+    document.getElementById("reset-game").reset()
+}
