@@ -28,24 +28,30 @@ gods[19] = ["siren", 100, 80, 90, 40];
 function GenerateHand (){
 
     //generates 10 random numbers between 1 and 20
-    let playerOneHand = [];
+    //let playerOneHand = [];
     let playerOneCardStats = [];
     let computerCardStats = [];
-    let computerHand = [];
+    //let computerHand = [];
     let i = 0;
     let j = 0;
     let card = 0;
+    const temp = new Set([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]);
+    const playerOneHand = new Set();
+    const ComputerHand = new Set([]);
+
     
         for (i = 0; i < 10; i++) {
             card = Math.floor((Math.random() * 20) + 1);
             //console.log(card);
             
-            if (playerOneHand.includes(card)) { 
-                playerOneHand.pop;
+            if (playerOneHand.has(card)) { 
+                playerOneHand.delete(card);
                 i--;
             } 
              else {
-                 playerOneHand.push(card);
+                 //playerOneHand.push(card);
+                 playerOneHand.add(card);
+
             }   
             
         }
@@ -67,18 +73,28 @@ function GenerateHand (){
     document.getElementById("p1Wisdom").innerHTML = playerOneCardStats[0][4];
   
     //set computers cards
-   
-     for (let m = 0; m < 10; m++){
-         if (computerHand.includes(playerOneHand)) {
-            computerHand.pop
-            m--;
-         } else {
-             computerHand.push(computerHand)
-          }
-}
-         console.log(computerHand);
 
+    for (let m = 0; m < 20; m++){
+        if (temp[m].has(playerOneHand[m])){
+                      temp.delete(m);
+        } else {
+            ComputerHand.add(m);
         }
+}
+}
+
+   
+//      for (let m = 0; m < 10; m++){
+//          if (computerHand.includes(playerOneHand)) {
+//             computerHand.pop
+//             m--;
+//          } else {
+//              computerHand.push(computerHand)
+//           }
+// }
+//          console.log(computerHand);
+
+//         }
 //}
 
 let newGame = document.getElementById("new-game");
