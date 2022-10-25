@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.2.0/math.js'></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel="stylesheet">
 <!--<script src="assets/js/game.js"></script>-->
   <title>Greek Gods Top Trumps</title>
 </head>
@@ -31,20 +31,21 @@
 
   <!--Players cards and playing area-->
   <section id="game-section">
-    <h2 id="p1-score">Player one cards: 0</h2>
-    <h2 id="p2-score">Player two cards: 0</h2>
+    <h2 id="p1-score">Player Score: 0</h2>
+    <h2 id="comp-score">Computer Score: 0</h2>
 
-    <form onsubmit="return compare()" action id="player1">
+    <!--<form onsubmit="return compare()" action id="player1"> -->
 
     <div id="p1-current">
-      <h2>Player one's card</h2>
+      <h2>Player One's Card</h2>
       <div class="box">
         <h3 id="p1CardName">????</h3>
         <table cellspacing = "1" cellpadding = "1" border = "0">
           <tbody>
             <tr>
               <th>Power: </th>   
-              <td><input type="radio" name="selection" id="power"><label for="power" id="p1Power">???</label></td>
+              <td><input type="radio" name="selection" id="power" value="???">
+                <!--<label for="power" id="p1Power">???</label></td>-->
             </tr>
             <tr>
               <th>Magic: </th>
@@ -63,30 +64,33 @@
       </div>
     </div>
     
-    <input id="compare-cards" value="Compare Cards" type="submit">
+    <button id="compare-cards" input type="button" onclick="CompareCards()">Compare</button>
     <button id="reset-game" onclick="resetGame()">Reset</button>      
+    <button id="next-round" input type="button" onclick="nextRound();">Next</button>
 
-    <div id="p2-current">
-      <h2>Player two's card</h2>
+    <div id="result"></div>
+
+    <div id="comp-current">
+      <h2>Computer's Card</h2>
       <div class="box">
-        <h3 id="p2-card-name">????</h3>
+        <h3 id="compCardName">????</h3>
         <table cellspacing = "1" cellpadding = "1" border = "0">
           <tbody>
             <tr>
               <th>Power: </th>   
-              <td>???</td>           
+              <td><label for="power" id="compPower">???</label></td>
             </tr>
             <tr>
-              <th>Magic: </th> 
-              <td>???</td>              
+              <th>Magic: </th>
+              <td><id="magic"><label for="magic" id="compMagic">???</label></td>
             </tr>
             <tr>
               <th>Terror: </th>
-              <td>???</td>             
+              <td><id="terror"><label for="terror" id="compTerror">???</label></td>
             </tr>
             <tr>
               <th>Wisdom: </th>
-              <td>???</td>              
+              <td><id="wisdom"><label for="wisdom" id="compWisdom">???</label></td>
             </tr>
           </tbody>
         </table>        
