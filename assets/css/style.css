@@ -1,3 +1,5 @@
+/* Main design and How to play section */
+
 body {
     background-color: #Eab03c;
 }
@@ -20,9 +22,9 @@ h3 {
     text-align: center;
 }
 
-p {
+#instruction-list {
     font-family: 'GFS Neohellenic', sans-serif;
-    text-align: center;
+    font-size: 120%;
 }
 
 #how-to-play {
@@ -30,6 +32,8 @@ p {
     background-color: #66a3f3;;
     border: 5px solid #230569;
 }
+
+/* Game Area */
 
 .box {
     height: 350px;
@@ -42,15 +46,58 @@ p {
     font-size: 150%;
 }
 
-#p1-current, #p2-current {
-    display: inline-block;    
+#p1-current, #comp-current {
+    display: inline-block;  
+    text-align: center;  
 }
 
 #game-section {
     text-align: center;
 }
 
-button {
+#button-container {
+    margin: auto;
+}
+
+#button-container td {
+    padding: 20px;
+}
+
+#score-sheet {
+    margin: auto;
+}
+
+#player-score-total {
+    padding-right: 30px;
+}
+
+#align-center {
+    text-align: center;
+}
+
+/* Game Buttons */
+
+#end-game {
+    text-align: center;
+    background-color: #CD2424;
+    border: 2px solid #230569;
+    font-size: 150%;
+    font-family: 'GFS Neohellenic', sans-serif;
+    border-radius: 25%;
+    padding: 15px;
+}
+
+#new-game {
+    text-align: center;
+    background-color: #40D31B;
+    border: 2px solid #230569;
+    font-size: 150%;
+    font-family: 'GFS Neohellenic', sans-serif;
+    border-radius: 25%;
+    padding: 15px;
+}
+
+.blue-button {
     text-align: center;
     background-color: #4a95f7;
     border: 2px solid #230569;
@@ -73,6 +120,8 @@ button {
     border-radius: 25%;
     padding: 15px;
 }
+
+/* Media Queries */
 
 
 

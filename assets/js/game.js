@@ -227,40 +227,10 @@ function nextRound(){
 }
 
 ////////////////////////////////////
-////   Resets the Game Button   ////
+////    Ends the Game Button    ////
 ////////////////////////////////////
     
-function resetGame() {
+function endGame() {
     alert("Game Over!");
-
-    //reset all global variables
-    p1Score = 0;
-    compScore = 0;
-
-    playerOneCardStats = [];
-    computerCardStats = [];
-    i = 0;
-    j = 0;
-    k = "";
-    m = 0;
-    card = 0;
-    toggle = false;
-    comptoggle = true;
-    cardNoPl = 0;
-    cardNoCo = 0;
-
-    playerPower = 0;
-    playerMagic = 0;
-    playerTerror = 0;
-    playerWisdom = 0;
-
-    computerPower = 0;
-    computerMagic = 0;
-    computerTerror = 0;
-    computerWisdom = 0;
-
-    count = 0;
-
-    GenerateHand();
-    //document.getElementById("reset-game").reset();
+    location.reload();
 }

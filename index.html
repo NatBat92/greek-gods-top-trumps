@@ -19,31 +19,38 @@
     <h1>Welcome to Top Trumps: Greek Mythology</h1>
     <div id="how-to-play">
     <h3>How to play:</h3>
-    <p>Select the attribute you think will beat your opponent, then click the 'Compare' button to reveal your opponents card. If you win the hand, a point will be added to your score, if you lose then a point will be given to your opponent. If a draw occurs, both players will be given a point. </p>
-    <p>The person with the highest score wins!</p>
+    <ol id="instruction-list">
+      <li>Press the New Game button to start the game.</li>
+      <li>Each player will be given 10 random cards.</li>
+      <li>Select the attribute you think will beat your opponent, then click the 'Compare' button to reveal your opponents card.</li>
+      <li>If you win the hand, a point will be added to your score, if you lose then a point will be given to your opponent.</li>   
+      <li>If a draw occurs, both players will be given a point.</li>
+      <li>There will be 10 rounds, at the end of the 10th round, the person with the highest score wins!</li>
+    </ol>
     </div>
   </section>
-
-    <div id="buttons">
-      <button id="new-game" input type="button" onclick="GenerateHand();">New Game</button>
-    </div>
-  
+      
   <!--Players cards and playing area-->
   <section id="game-section">
     
-    <table>
+    <table id="score-sheet">
       <tr>
-      <td><h2> Player Score: </h2></td>
-      <td><h2 id="p1-score">0</h2></td>
+        <td colspan="2" id="align-center"><h2> Round: </h2></td>
+        <td><h2 id="next-round">0</h2></td>
       </tr>
       <tr>
+      <td><h2> Player Score: </h2></td>
+      <td id="player-score-total"><h2 id="p1-score">0</h2></td>
       <td><h2> Computer Score: </h2></td>
       <td><h2 id="comp-score">0</h2></td>
       </tr>
-      <tr>
-        <td><h2> Round: </h2></td>
-        <td><h2 id="next-round">0</h2></td>
-      </tr>
+  </table>
+
+    <table id="button-container">
+      <td><button id="new-game" input type="button" onclick="GenerateHand()">New Game</button></td>  
+      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>  
+      <td><button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards()">Compare</button></td>            
+      <td><button class="blue-button" id="next-round" input type="button" onclick="nextRound()">Next</button></td>
     </table>
 
     <div id="p1-current">
@@ -72,14 +79,8 @@
         </table>
       </div>
     </div>
-    <table>
-      <tr></tr>
-      <td><button id="compare-cards" input type="button" onclick="CompareCards()">Compare</button></td>
-      <tr></tr>
-      <td><button id="reset-game" input type="button" onclick="resetGame()">Reset</button></td>
-      <tr></tr>
-      <td><button id="next-round" input type="button" onclick="nextRound();">Next</button></td>
-    </table>
+
+
 
     <div id="comp-current">
       <h2>Computer's Card</h2>
