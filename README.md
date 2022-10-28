@@ -1,108 +1,162 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Am I responsive image
 
-Welcome NatBat92,
+# Top Trumps - Greek Mythology
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This is a web-based version of the card game classic that is: Top Trumps.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Customer Goals
 
-## Gitpod Reminders
+* Easy to understand
+* Attractive design
+* Interactive with visible prompts such as visible scoreing/ rounds
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# UX
 
-`python3 -m http.server`
+## Scope
 
-A blue button should appear to click: _Make Public_,
+To achieve the goals I set out for this game, I included the following features:
 
-Another blue button should appear to click: _Open Browser_.
+* An easy to use webpage with buttons that are colour coded so they can be distinguished from each other.
+* Simple card structure with a user friendly font that the user will easily be able to read.
+* A contrasting colour scheme to make the page more accessible for users
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Structure
 
-A blue button should appear to click: _Make Public_,
+For this web-based game, I wanted something that was eye catching and would be easily accessible for everyone. The way i structured it was a bold title which instantly tells you what the page is about and contains, a few buttons which are required to begin the game/ compare your cards with the computer/ end the game/ go to the next round and a how-to-play button which will bring up a pop-up containing the instructions which reduces the need for scrolling when on a larger screen. Below this is the game are where the players and computers cards are shown (the computers cards remain hidden until the user has picked their attribute and clicked compare). 
 
-Another blue button should appear to click: _Open Browser_.
+## Skeleton
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+I created quick sketches of what I wanted the game to look like in Excel as it was easy to define the space and the frame of the site in its basic form.
 
-To log into the Heroku toolbelt CLI:
+![excel sketch of the game when on a larger screen](assets/images/top-trumps-game-design-pc-tablet.png)
+![excel sketch of the game when on mobile and smaller screen sizes](assets/images/top-trumps-game-design%20mobile.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Surface
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The colour scheme of the website was chosen to provide simplicity and to match colours used in artwork that depict the Greek Gods. The logo colour was chosen as it stood out on the sandy coloured background. The sandy background was chosen as it is a solid basic colour that made the blue colour stand out.
 
-------
+I chose the font 'GFS Neohellenic' throughout as it looks appealing for the Game and the theme I was going for. This font looks very similar to fonts used for other sites/ games that revolve around Greece and it's mythology. Furthermore, 'Sans-serif' was used as the default go to in case my chosen font couldn't be loaded. I used a hover effect on the navigation bar to attract attention and demonstrate the ease of navigation across all pages.
 
-## Release History
+# Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Game Buttons
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+ADD HOW-TO-PLAY BUTTON AND GET SCREENSHOT
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Game Area
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The game area is simply laid out with 2 boxes which I have coloured blue to distinguish them from the background. In the boxes to begin with there are just ??? until new game is clicked then the Players card will change to show a god/ creature card and attributes will be displayed next to the corresponding feature. There are also radio buttons for the user to click on, once one is selected that is the attribute that will be compared when the user clicks the compare button.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![image of the game  cards](assets/images/game-area.jpg)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Footer
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The footer is nice and simple and just references copyright for the game page as mine
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+ADD SCREENSHOT HERE
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Features left to implement
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* Include more rounds
+* Add more cards to the deck
+* make the game locally multiplayer
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Technologies used
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* HTML was used as the main building block for content structure.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-------
+* CSS was used to set the layout of the site and the features within it and to make the website responsive for multiple screen sizes.
 
-## FAQ about the uptime script
+[Google Developer Tools](https://developer.chrome.com/docs/devtools/)
 
-**Why have you added this script?**
+* Google Dev Tools were used so I could check my website through all stages of development and ensure it was responsive.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+[Google Fonts](https://fonts.google.com/)
 
-**How will this affect me?**
+* Google fonts is where I chose the font that is seen throughout the website.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+[github](https://github.com/)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+*  Github was used to store the code for the project.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+[Git](https://git-scm.com/)
 
-**So….?**
+* Git was used for version control to commit and push to Github.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+[Gitpod](https://www.gitpod.io/)
 
-**Can I opt out?**
+* Gitpod was used as the development environment.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+[WebAim](https://webaim.org/resources/contrastchecker/)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+* I used this website to check to contrast of colours for the background colour and text colour.
 
-**Anything more?**
+[W3C Markup Validation Service](https://validator.w3.org/)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+* This was used to test my code and to make sure there were no errors.
 
----
+[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
-Happy coding!
+* This was used to test my code and to make sure there were no errors or redundant code that didn't need to be there.
+
+[Am I Responsive](https://ui.dev/amiresponsive)
+
+* I used this to demonstrate what my website would look across different devices.
+
+# Testing
+
+## User Stories
+
+1. As a first time user I want to be able to learn the game in a way that is simple and clear.
+* There is How-to-Play button which opens a pop-up window whch details a simple guide in how to play the game.
+
+2. As a user I want a simple game design which has obvious features where I can see my score and know which round I am on.
+* Above the game cards there is a section dedicated to the score and the round counters.
+
+![screenshot of the score and round counter](assets/images/score-round-counter.jpg)
+
+## Testing
+
+I tested my game on a few platforms including Microsoft Edge, Chrome and Android web browsers. I confirmed my project is responsive by using the dev tools on the web browsers and changing the sizes of the screen. I have tested the buttons and other features to check that they all work as they should. When troubleshooting the game I used console.log("") to locate any errors or to see whether a function was working or if it was doing something different to what i wanted it to do.
+
+## Validator Testing
+
+### HTML
+* All five of my web pages were tested using the official W3C Validator and they passed without error.
+
+![screenshot of the HTML passing the validator](assets/css/images/index-pass.png)
+
+### CSS
+* When I ran my CSS through the validator it passed without error.
+
+![screenshot of my CSS passing in the validator](assets/css/images/css-pass.png)
+
+### Accessibility
+* I can confirm the colours and font I chose are easy to read and accessible when running lighthouse in Dev tools.
+
+![screenshot of lighthouse perforance rating](assets/css/images/lighthouse-screenshot.png)
+
+## Deployment
+
+I followed these steps to deploy my website:
+* Log into Github
+* Selected the greek-gods-top-trumps repository
+* Click the settings button
+* Select 'pages' on the left hand side
+* In the sources section, select branch 'main' and save
+* After a few seconds the link to website was provided as seen below
+
+![github pages link](assets/css/images/github-pages.jpg)
+
+# Credits
+
+## Code
+* General coding queries were answered by using [W3Schools](https://www.w3schools.com/html/)
+
+# Acknowledgements
+I would like to thank my mentor, Andre Aquilina, for his support, help, guidance and ideas he had about certain features I had on the website and how to improve them. And also my partner for her assistance in explaining other methods that weren't covered in the course content that I have used in my game.
