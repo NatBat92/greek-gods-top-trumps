@@ -29,7 +29,8 @@ h3 {
 
 #how-to-play {
     border-radius: 25px;
-    background-color: #66a3f3;;
+    background-color: #66a3f3;
+    ;
     border: 5px solid #230569;
 }
 
@@ -39,16 +40,18 @@ h3 {
     height: 350px;
     width: 350px;
     border-radius: 25px;
-    background-color: #66a3f3;;
+    background-color: #66a3f3;
+    ;
     border: 5px solid #230569;
     margin: 25px;
     font-family: 'GFS Neohellenic', sans-serif;
     font-size: 150%;
 }
 
-#p1-current, #comp-current {
-    display: inline-block;  
-    text-align: center;  
+#p1-current,
+#comp-current {
+    display: inline-block;
+    text-align: center;
 }
 
 #game-section {
@@ -122,10 +125,3 @@ h3 {
 }
 
 /* Media Queries */
-
-
-
-
-
-
-

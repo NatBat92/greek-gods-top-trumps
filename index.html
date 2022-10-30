@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,58 +10,75 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel="stylesheet">
-<!--<script src="assets/js/game.js"></script>-->
+  <!--<script src="assets/js/game.js"></script>-->
   <title>Greek Gods Top Trumps</title>
 </head>
+
 <body>
 
   <!--Page title + How to play-->
   <section>
     <h1>Welcome to Top Trumps: Greek Mythology</h1>
     <div id="how-to-play">
-    <h3>How to play:</h3>
-    <ol id="instruction-list">
-      <li>Press the New Game button to start the game.</li>
-      <li>Each player will be given 10 random cards.</li>
-      <li>Select the attribute you think will beat your opponent, then click the 'Compare' button to reveal your opponents card.</li>
-      <li>If you win the hand, a point will be added to your score, if you lose then a point will be given to your opponent.</li>   
-      <li>If a draw occurs, both players will be given a point.</li>
-      <li>There will be 10 rounds, at the end of the 10th round, the person with the highest score wins!</li>
-    </ol>
+      <h3>How to play:</h3>
+      <ol id="instruction-list">
+        <li>Press the New Game button to start the game.</li>
+        <li>Each player will be given 10 random cards.</li>
+        <li>Select the attribute you think will beat your opponent, then click the 'Compare' button to reveal your
+          opponents card.</li>
+        <li>If you win the hand, a point will be added to your score, if you lose then a point will be given to your
+          opponent.</li>
+        <li>If a draw occurs, both players will be given a point.</li>
+        <li>There will be 10 rounds, at the end of the 10th round, the person with the highest score wins!</li>
+      </ol>
     </div>
   </section>
-      
+
   <!--Players cards and playing area-->
   <section id="game-section">
-    
+
     <table id="score-sheet">
       <tr>
-        <td colspan="2" id="align-center"><h2> Round: </h2></td>
-        <td><h2 id="next-round">0</h2></td>
+        <td colspan="2" id="align-center">
+          <h2> Round: </h2>
+        </td>
+        <td>
+          <h2 id="next-round"></h2>
+        </td>
       </tr>
       <tr>
-      <td><h2> Player Score: </h2></td>
-      <td id="player-score-total"><h2 id="p1-score">0</h2></td>
-      <td><h2> Computer Score: </h2></td>
-      <td><h2 id="comp-score">0</h2></td>
+        <td>
+          <h2> Player Score: </h2>
+        </td>
+        <td id="player-score-total">
+          <h2 id="p1-score">0</h2>
+        </td>
+        <td>
+          <h2> Computer Score: </h2>
+        </td>
+        <td>
+          <h2 id="comp-score">0</h2>
+        </td>
       </tr>
-  </table>
+    </table>
 
     <table id="button-container">
-      <td><button id="new-game" input type="button" onclick="GenerateHand()">New Game</button></td>  
-      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>  
-      <td><button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards()">Compare</button></td>            
-      <td><button class="blue-button" id="next-round" input type="button" onclick="nextRound()">Next</button></td>
+      <td><button id="new-game" input type="button" onclick="GenerateHand()">New Game</button></td>
+      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>
+      <td><button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards()">Compare</button>
+      </td>
+      <td><button class="blue-button" id="next-round-button" input type="button" onclick="nextRound()">Next</button>
+      </td>
     </table>
 
     <div id="p1-current">
       <h2>Player One's Card</h2>
       <div class="box">
         <h3 id="p1CardName">????</h3>
-        <table cellspacing = "1" cellpadding = "1" border = "0">
+        <table cellspacing="1" cellpadding="1" border="0">
           <tbody>
             <tr>
-              <th>Power: </th>   
+              <th>Power: </th>
               <td><input type="radio" name="selection" id="power"><label for="power" id="p1Power">???</label></td>
             </tr>
             <tr>
@@ -86,10 +104,10 @@
       <h2>Computer's Card</h2>
       <div class="box">
         <h3 id="compCardName">????</h3>
-        <table cellspacing = "1" cellpadding = "1" border = "0">
+        <table cellspacing="1" cellpadding="1" border="0">
           <tbody>
             <tr>
-              <th>Power: </th>   
+              <th>Power: </th>
               <td><input type="hidden" name="selection" id="Cpower"><label for="Cpower" id="compPower">???</label></td>
             </tr>
             <tr>
@@ -98,20 +116,23 @@
             </tr>
             <tr>
               <th>Terror: </th>
-              <td><input type="hidden" name="selection" id="Cterror"><label for="Cterror" id="compTerror">???</label></td>
+              <td><input type="hidden" name="selection" id="Cterror"><label for="Cterror" id="compTerror">???</label>
+              </td>
             </tr>
             <tr>
               <th>Wisdom: </th>
-              <td><input type="hidden" name="selection" id="Cwisdom"><label for="Cwisdom" id="compWisdom">???</label></td>
+              <td><input type="hidden" name="selection" id="Cwisdom"><label for="Cwisdom" id="compWisdom">???</label>
+              </td>
             </tr>
           </tbody>
-        </table>      
-      </div>      
-    </div>    
-    </form>     
-  </section>  
+        </table>
+      </div>
+    </div>
+    </form>
+  </section>
 
   <script src="assets/js/game.js"></script>
 
 </body>
+
 </html>

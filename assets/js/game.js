@@ -1,6 +1,6 @@
 // God  and mythical creature arrays
-let gods = new Array ();
- 
+let gods = new Array();
+
 gods[0] = ["Hades", 100, 65, 90, 25];
 gods[1] = ["Cronus", 50, 20, 30, 65];
 gods[2] = ["Persephone", 0, 40, 0, 20];
@@ -21,7 +21,7 @@ gods[16] = ["Basilisk", 100, 0, 90, 0];
 gods[17] = ["Harpy", 70, 50, 90, 30];
 gods[18] = ["Phoenix", 70, 90, 25, 70];
 gods[19] = ["Siren", 100, 80, 90, 40];
- 
+
 
 //Stores players score
 let p1Score = 0;
@@ -52,156 +52,157 @@ let computerTerror;
 let computerWisdom;
 
 let count = 0;
-
-//while (count < 10){
+let round = 1;
 
 /////////////////////////////////////////////////////////////////
 ////   Generates Hands of Cards for playerOne and Computer   ////
 /////////////////////////////////////////////////////////////////
 
-function GenerateHand (){
+function GenerateHand() {
 
     /////////////////////////////////
     ////   Set playerOne cards   ////
     /////////////////////////////////
 
-    //On clicking 'New Game', game counter is set to 0
-    //count = 0;
-    
+    document.getElementById("next-round").innerHTML = round;
+
     //Creates 10 random numbers for player one hand of cards between 0 and 19
     //These values correspond to the index value in gods array
-    while (playerOneHand.size != 10){
-        card = Math.floor((Math.random() * 19)); 
+    while (playerOneHand.size != 10) {
+        card = Math.floor((Math.random() * 19));
         toggle = playerOneHand.has(card);
-        if (toggle == true){ //if statement used to make sure no duplicate values exist
+        if (toggle == true) { //if statement used to make sure no duplicate values exist
             playerOneHand.delete(card);
             i--;
-        }
-        else{
+        } else {
             playerOneHand.add(card);
-        }  
+        }
     }
     console.log(playerOneHand); //Used For Debugging Purposes
-        
+
     //Using above random numbers, corresponding index values of Gods array added to PlayerOneCards array
-    for (j = 0; j < 10; j++){
+    for (j = 0; j < 10; j++) {
         cardNoPl = [...playerOneHand][j];
         playerOneCardStats.push(gods[cardNoPl]);
     }
 
     //set players first card
-    document.getElementById("p1CardName").innerHTML = playerOneCardStats[count][0];
-    playerPower = document.getElementById("p1Power").innerHTML = playerOneCardStats[count][1];
-    playerMagic = document.getElementById("p1Magic").innerHTML = playerOneCardStats[count][2];
-    playerTerror = document.getElementById("p1Terror").innerHTML = playerOneCardStats[count][3];
-    playerWisdom = document.getElementById("p1Wisdom").innerHTML = playerOneCardStats[count][4];
+    document.getElementById("p1CardName").innerHTML = playerOneCardStats[0][0];
+    playerPower = document.getElementById("p1Power").innerHTML = playerOneCardStats[0][1];
+    playerMagic = document.getElementById("p1Magic").innerHTML = playerOneCardStats[0][2];
+    playerTerror = document.getElementById("p1Terror").innerHTML = playerOneCardStats[0][3];
+    playerWisdom = document.getElementById("p1Wisdom").innerHTML = playerOneCardStats[0][4];
 
     ////////////////////////////////
     ////   Set Computer Cards   ////
     ////////////////////////////////
 
     //If card index value is not present in playerOne hand, add to computer hand
-    for (m = 0; m < 20; m++){
+    for (m = 0; m < 20; m++) {
         comptoggle = playerOneHand.has(m);
-        if (comptoggle !== true){
+        if (comptoggle !== true) {
             computerHand.add(m);
         }
     }
     console.log(computerHand); //Used For Debugging Purposes
- 
+
     //Using above random numbers, corresponding index values of Gods array added to ComputerHands array
-    for (j = 0; j < 10; j++){
+    for (j = 0; j < 10; j++) {
         cardNoCo = [...computerHand][j];
         computerCardStats.push(gods[cardNoCo]);
     }
 
     console.log(playerOneCardStats); //Used For Debugging Purposes
-    console.log(computerCardStats);  //Used For Debugging Purposes
+    console.log(computerCardStats); //Used For Debugging Purposes
 
     //set computers first card
-    document.getElementById("compCardName").innerHTML = computerCardStats[count][0];
-    computerPower = document.getElementById("compPower").innerHTML = computerCardStats[count][1];
-    computerMagic = document.getElementById("compMagic").innerHTML = computerCardStats[count][2];
-    computerTerror = document.getElementById("compTerror").innerHTML = computerCardStats[count][3];
-    computerWisdom = document.getElementById("compWisdom").innerHTML = computerCardStats[count][4];
-
+    document.getElementById("compCardName").innerHTML = computerCardStats[0][0];
+    computerPower = computerCardStats[0][1];
+    computerMagic = computerCardStats[0][2];
+    computerTerror = computerCardStats[0][3];
+    computerWisdom = computerCardStats[0][4];
 }
 
 //////////////////////
 ////   The Game   ////
 //////////////////////
 
-function CompareCards(){
+function CompareCards() {
 
     //If Power selected 
     if (document.getElementById("power").checked) {
         console.log("You selected Power");
         console.log(computerMagic);
         console.log(playerMagic);
-        if (playerPower > computerPower){
+        if (playerPower > computerPower) {
             console.log("You win!! :) ");
             p1Score++;
-        }
-        else if (playerPower == computerPower){
+        } else if (playerPower == computerPower) {
             console.log("Draw! ");
             p1Score++;
             compScore++;
-        }
-        else{
+        } else {
             console.log("You lose :(");
             compScore++;
         }
     }
     //If Magic selected
     else if (document.getElementById("magic").checked) {
-        if (playerMagic > computerMagic){
+        if (playerMagic > computerMagic) {
             console.log("You win!! :) ");
             p1Score++;
-        }
-        else if (playerMagic == computerMagic){
+        } else if (playerMagic == computerMagic) {
             console.log("Draw! ");
             p1Score++;
             compScore++;
-        }
-        else{
+        } else {
             console.log("You lose :(");
             compScore++;
         }
     }
+    //If Terror selected
     else if (document.getElementById("terror").checked) {
-        if (playerTerror > computerTerror){
+        if (playerTerror > computerTerror) {
             console.log("You win!! :) ");
             p1Score++;
-        }
-        else if (playerTerror == computerTerror){
+        } else if (playerTerror == computerTerror) {
             console.log("Draw! ");
             p1Score++;
             compScore++;
-        }
-        else{
+        } else {
             console.log("You lose :(");
             compScore++;
         }
     }
+    //If Wisdom selected
     else if (document.getElementById("wisdom").checked) {
-        if (playerWisdom > computerWisdom){
+        if (playerWisdom > computerWisdom) {
             console.log("You win!! :) ");
             p1Score++;
-        }
-        else if (playerWisdom == computerWisdom){
+        } else if (playerWisdom == computerWisdom) {
             console.log("Draw! ");
             p1Score++;
             compScore++;
-        }
-        else{
+        } else {
             console.log("You lose :(");
             compScore++;
         }
     }
     document.getElementById("p1-score").innerHTML = p1Score;
     document.getElementById("comp-score").innerHTML = compScore;
-    document.getElementById("next-round").innerHTML = count;
-    //count++;
+    document.getElementById("next-round").innerHTML = round;
+    count++;
+
+    console.log(round);
+
+    //Display computer card after player has compared cards
+    document.getElementById("compPower").innerHTML = computerPower;
+    document.getElementById("compMagic").innerHTML = computerMagic;
+    document.getElementById("compTerror").innerHTML = computerTerror;
+    document.getElementById("compWisdom").innerHTML = computerWisdom;
+
+    //Disable button once clicked so can't run round more than once
+    document.getElementById("compare-cards").disabled = true;
 }
 
 ////////////////////////////////////
@@ -209,27 +210,63 @@ function CompareCards(){
 ////////////////////////////////////
 
 let newGame = document.getElementById("new-game");
-    newGame.addEventListener ('click', () => {
-        newGame.style.display = 'none';
-    })
+newGame.addEventListener('click', () => {
+    newGame.style.display = 'none';
+})
 
 //////////////////////////////
 ////   Next Round Button  ////
 //////////////////////////////
 
-function nextRound(){
-    count++;
+function nextRound() {
+    round++;
 
-    // const nextRound = () => {
-    //     count++;
-    //     totalCount.innerHTML = count;
-    // };
+    //clear radio buttons
+    document.querySelector('input[name="selection"]:checked').checked = false;
+
+    if (round >= 10) {
+        document.getElementById("next-round-button").innerHTML = "Finish";
+    }
+
+    //if round exceeds 10, end game and display results
+    if (round > 10) {
+        console.log("END OF GAME");
+        if (p1Score > compScore) {
+            console.log("You Win!!!");
+        } else if (compScore > p1Score)
+            console.log("You Lose");
+        else if (compScore === p1Score)
+            console.log("It's a draw");
+    } else {
+        //re-enable 'Compare Cards' button
+        document.getElementById("compare-cards").disabled = false;
+
+        //display players new card
+        document.getElementById("p1CardName").innerHTML = playerOneCardStats[count][0];
+        playerPower = document.getElementById("p1Power").innerHTML = playerOneCardStats[count][1];
+        playerMagic = document.getElementById("p1Magic").innerHTML = playerOneCardStats[count][2];
+        playerTerror = document.getElementById("p1Terror").innerHTML = playerOneCardStats[count][3];
+        playerWisdom = document.getElementById("p1Wisdom").innerHTML = playerOneCardStats[count][4];
+
+        //store new card values in variables
+        document.getElementById("compCardName").innerHTML = computerCardStats[count][0];
+        computerPower = computerCardStats[count][1];
+        computerMagic = computerCardStats[count][2];
+        computerTerror = computerCardStats[count][3];
+        computerWisdom = computerCardStats[count][4];
+
+        //reset computer card values shown on screen 
+        document.getElementById("compPower").innerHTML = "???";
+        document.getElementById("compMagic").innerHTML = "???";
+        document.getElementById("compTerror").innerHTML = "???";
+        document.getElementById("compWisdom").innerHTML = "???";
+    }
 }
 
 ////////////////////////////////////
 ////    Ends the Game Button    ////
 ////////////////////////////////////
-    
+
 function endGame() {
     alert("Game Over!");
     location.reload();
