@@ -271,3 +271,25 @@ function endGame() {
     alert("Game Over!");
     location.reload();
 }
+
+/////////////////////////////////////////////////
+////   Open and close the How-To-Play box    ////
+/////////////////////////////////////////////////
+
+let modal = document.getElementById("how-to-play");
+let btn = document.getElementById("how-to-play-button");
+let closeBtn = document.getElementById("close-modal");
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

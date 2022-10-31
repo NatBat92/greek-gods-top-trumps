@@ -124,4 +124,38 @@ h3 {
     padding: 15px;
 }
 
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    width: 30%; /* Full width */
+    height: 50%; /* Full height */
+    left: 35%;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    font-family: 'GFS Neohellenic', sans-serif;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #close-modal {
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    left: 45%;
+    font-size: 150%;
+    font-family: 'GFS Neohellenic', sans-serif;
+    border-radius: 25%;
+    padding: 15px;    
+  }
+
 /* Media Queries */

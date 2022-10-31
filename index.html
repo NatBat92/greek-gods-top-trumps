@@ -19,8 +19,9 @@
   <!--Page title + How to play-->
   <section>
     <h1>Welcome to Top Trumps: Greek Mythology</h1>
-    <div id="how-to-play">
+    <div id="how-to-play" class="modal">
       <h3>How to play:</h3>
+      <div class="modal-content">
       <ol id="instruction-list">
         <li>Press the New Game button to start the game.</li>
         <li>Each player will be given 10 random cards.</li>
@@ -31,7 +32,9 @@
         <li>If a draw occurs, both players will be given a point.</li>
         <li>There will be 10 rounds, at the end of the 10th round, the person with the highest score wins!</li>
       </ol>
+      <button id="close-modal">Close</button>
     </div>
+  </div>
   </section>
 
   <!--Players cards and playing area-->
@@ -64,11 +67,12 @@
 
     <table id="button-container">
       <td><button id="new-game" input type="button" onclick="GenerateHand()">New Game</button></td>
-      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>
+      <td><button class="blue-button" id="how-to-play-button">How-to-Play</button></td>
       <td><button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards()">Compare</button>
       </td>
       <td><button class="blue-button" id="next-round-button" input type="button" onclick="nextRound()">Next</button>
       </td>
+      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>
     </table>
 
     <div id="p1-current">
