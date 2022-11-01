@@ -203,6 +203,8 @@ function CompareCards() {
 
     //Disable button once clicked so can't run round more than once
     document.getElementById("compare-cards").disabled = true;
+
+    
 }
 
 ////////////////////////////////////
@@ -220,7 +222,8 @@ newGame.addEventListener('click', () => {
 
 function nextRound() {
     round++;
-
+    document.getElementById("next-round").innerHTML = round;
+    
     //clear radio buttons
     document.querySelector('input[name="selection"]:checked').checked = false;
 

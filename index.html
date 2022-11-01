@@ -19,6 +19,9 @@
   <!--Page title + How to play-->
   <section>
     <h1>Welcome to Top Trumps: Greek Mythology</h1>
+
+    <hr>
+
     <div id="how-to-play" class="modal">
       <h3>How to play:</h3>
       <div class="modal-content">
@@ -38,7 +41,7 @@
   </section>
 
   <!--Players cards and playing area-->
-  <section id="game-section">
+  <section style="overflow-x:auto;" id="game-section">
 
     <table id="score-sheet">
       <tr>
@@ -68,18 +71,22 @@
     <table id="button-container">
       <td><button id="new-game" input type="button" onclick="GenerateHand()">New Game</button></td>
       <td><button class="blue-button" id="how-to-play-button">How-to-Play</button></td>
-      <td><button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards()">Compare</button>
+      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>
+      <tr></tr>
+      <td colspan="2"><button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards()">Compare</button>
       </td>
       <td><button class="blue-button" id="next-round-button" input type="button" onclick="nextRound()">Next</button>
       </td>
-      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>
+    </tr>
+      
     </table>
 
     <div id="p1-current">
       <h2>Player One's Card</h2>
       <div class="box">
+        <br>
         <h3 id="p1CardName">????</h3>
-        <table cellspacing="1" cellpadding="1" border="0">
+        <table class="card-table" cellspacing="1" cellpadding="1" border="0">
           <tbody>
             <tr>
               <th>Power: </th>
@@ -102,13 +109,12 @@
       </div>
     </div>
 
-
-
     <div id="comp-current">
       <h2>Computer's Card</h2>
       <div class="box">
+        <br>
         <h3 id="compCardName">????</h3>
-        <table cellspacing="1" cellpadding="1" border="0">
+        <table class="card-table" cellspacing="1" cellpadding="1" border="0">
           <tbody>
             <tr>
               <th>Power: </th>
@@ -118,7 +124,7 @@
               <th>Magic: </th>
               <td><input type="hidden" name="selection" id="Cmagic"><label for="Cmagic" id="compMagic">???</label></td>
             </tr>
-            <tr>
+            <tr>             
               <th>Terror: </th>
               <td><input type="hidden" name="selection" id="Cterror"><label for="Cterror" id="compTerror">???</label>
               </td>
@@ -135,7 +141,14 @@
     </form>
   </section>
 
+  <hr>
+
+  <footer>
+    <p><i class="fa-regular fa-copyright"></i>2022 NatBat92</p>
+  </footer>
+
   <script src="assets/js/game.js"></script>
+  <script src="https://kit.fontawesome.com/83f4b7e454.js" crossorigin="anonymous"></script>
 
 </body>
 
