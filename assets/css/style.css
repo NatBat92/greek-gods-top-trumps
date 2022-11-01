@@ -67,6 +67,7 @@ hr {
 .card-table {
     margin-left: 25%;
     margin-top: 25%;
+    padding: 0;
 }
 
 #button-container {
@@ -173,8 +174,10 @@ hr {
     font-family: 'GFS Neohellenic', sans-serif;
     text-align: center;
     font-size: 125%;
+  }
 
-
+  img {
+    margin: 5px 3.5%;
   }
 
 /* Media Queries */
@@ -192,4 +195,25 @@ body {
 .box {
     margin: 0;
 }
+
+img {
+    width: 100%;
+}
+
+.blue-button {
+    font-size: 100%;
+}
+
+#new-game {
+    font-size: 100%;
+}
+
+#end-game {
+    font-size: 100%;
+}
+
+#compare-cards {
+    font-size: 100%;
+}
+
 }
