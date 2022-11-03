@@ -226,17 +226,10 @@ function nextRound() {
     document.querySelector('input[name="selection"]:checked').checked = false;
 
     if (round >= 9) {
-        let finishGame = document.getElementById("next-round-button");
-        finishGame.addEventListener('click', () => {
-            finishGame.style.display = 'none';
+        let hideNext = document.getElementById("next-round-button");
+        hideNext.addEventListener('click', () => {
+            hideNext.style.display = 'none';
         })
-    }
-
-    if (round <= 9) {
-        let finishGame = document.getElementById("finish-game-button");
-        //finishGame.addEventListener('click', () => {
-            finishGame.style.display = 'none';
-        }
     }
 
     //if round exceeds 10, end game and display results
