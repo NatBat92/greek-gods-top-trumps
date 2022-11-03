@@ -202,9 +202,7 @@ function CompareCards() {
     document.getElementById("compWisdom").innerHTML = computerWisdom;
 
     //Disable button once clicked so can't run round more than once
-    document.getElementById("compare-cards").disabled = true;
-
-    
+    document.getElementById("compare-cards").disabled = true;    
 }
 
 ////////////////////////////////////
@@ -227,12 +225,22 @@ function nextRound() {
     //clear radio buttons
     document.querySelector('input[name="selection"]:checked').checked = false;
 
-    if (round >= 10) {
-        document.getElementById("next-round-button").innerHTML = "Finish";
+    if (round >= 9) {
+        let finishGame = document.getElementById("next-round-button");
+        finishGame.addEventListener('click', () => {
+            finishGame.style.display = 'none';
+        })
+    }
+
+    if (round <= 9) {
+        let finishGame = document.getElementById("finish-game-button");
+        //finishGame.addEventListener('click', () => {
+            finishGame.style.display = 'none';
+        }
     }
 
     //if round exceeds 10, end game and display results
-    if (round > 10) {
+    if (round >= 11) {
         console.log("END OF GAME");
         if (p1Score > compScore) {
             console.log("You Win!!!");
@@ -267,7 +275,7 @@ function nextRound() {
 }
 
 ////////////////////////////////////
-////    Ends the Game Button    ////
+////    End the Game Button     ////
 ////////////////////////////////////
 
 function endGame() {

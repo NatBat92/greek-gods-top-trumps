@@ -20,7 +20,7 @@
   <section>
     <h1>Welcome to Top Trumps: Greek Mythology</h1>
 
-    <img src="assets/images/border-single1.png">
+    <img src="assets/images/border-single1.png" alt="blue banner that includes various greek artifacts">
 
     <div id="how-to-play" class="modal">
       <h3>How to play:</h3>
@@ -37,6 +37,15 @@
       </ol>
       <button id="close-modal">Close</button>
     </div>
+  </div>
+  </section>
+
+  <section id="end-of-game" class="modal">
+    <h2>End of the Game!</h2>
+    <div class="modal-content">
+    <p>The winner is:</p>
+    <p id="player-comp-win-draw"></p>
+    <button id="close-modal">Close</button>
   </div>
   </section>
 
@@ -68,19 +77,14 @@
       </tr>
     </table>
 
-    <table id="button-container">
-      <td><button id="new-game" input type="button" onclick="GenerateHand()">New Game</button></td>
-      <td><button class="blue-button" id="how-to-play-button">How-to-Play</button></td>
-      <td><button id="end-game" input type="button" onclick="endGame()"> End Game </button></td>
-      <tr></tr>
-      <td colspan="1"><button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards()">Compare</button>
-      </td>
-      <td></td>
-      <td colspan="2"><button class="blue-button" id="next-round-button" input type="button" onclick="nextRound()">Next</button>
-      </td>
-    </tr>
-      
-    </table>
+    <nav id="button-container">
+      <button id="new-game" input type="button" onclick="GenerateHand()">New Game</button>
+      <button class="blue-button" id="how-to-play-button">How-to-Play</button>
+      <button id="end-game" input type="button" onclick="endGame()"> End Game </button>      
+      <button class="blue-button" id="compare-cards" input type="button" onclick="CompareCards(); document.getElementById('next-round-button').disabled=false">Compare</button>     
+      <button class="blue-button" id="next-round-button" input type="button" onclick="nextRound(); this.disabled=true">Next</button>
+      <button class="blue-button" id="finish-game-button" input type="button">Finish</button>
+    </nav>
 
     <div id="p1-current">
       <h2>Player One's Card</h2>
@@ -142,7 +146,7 @@
     </form>
   </section>
 
-  <img src="assets/images/border-single1.png">
+  <img src="assets/images/border-single1.png" alt="blue banner that includes various greek artifacts">
 
   <footer>
     <p><i class="fa-regular fa-copyright"></i>2022 NatBat92</p>
