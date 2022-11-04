@@ -36,6 +36,7 @@ let m = 0;
 let card = 0;
 let toggle;
 let comptoggle;
+let cardCheck;
 let cardNoPl = 0;
 let cardNoCo = 0;
 const playerOneHand = new Set();
@@ -127,8 +128,21 @@ function GenerateHand() {
 ////   The Game   ////
 //////////////////////
 
-function CompareCards() {
+//Checks to see if user has selected an attribute to compare
+function cardCheckTest() {
+    cardCheck = document.querySelector('input[name="selection"]:checked');
+    console.log("cardCheck value is" + cardCheck);
 
+    if (cardCheck == null) {
+        alert("Please select an attribute!");
+        document.getElementById('next-round-button').disabled=true;
+    } else {
+        CompareCards();
+        document.getElementById('next-round-button').disabled=false;
+    }
+}
+
+function CompareCards() {
     //If Power selected 
     if (document.getElementById("power").checked) {
         console.log("You selected Power");
@@ -188,6 +202,7 @@ function CompareCards() {
             compScore++;
         }
     }
+    //Updates players score, computers score and round number
     document.getElementById("p1-score").innerHTML = p1Score;
     document.getElementById("comp-score").innerHTML = compScore;
     document.getElementById("next-round").innerHTML = round;
@@ -202,7 +217,7 @@ function CompareCards() {
     document.getElementById("compWisdom").innerHTML = computerWisdom;
 
     //Disable button once clicked so can't run round more than once
-    document.getElementById("compare-cards").disabled = true;    
+    document.getElementById("compare-cards").disabled = true;
 }
 
 ////////////////////////////////////
@@ -221,7 +236,7 @@ newGame.addEventListener('click', () => {
 function nextRound() {
     round++;
     document.getElementById("next-round").innerHTML = round;
-    
+
     //clear radio buttons
     document.querySelector('input[name="selection"]:checked').checked = false;
 
@@ -233,14 +248,15 @@ function nextRound() {
     }
 
     //if round exceeds 10, end game and display results
-    if (round >= 11) {
-        console.log("END OF GAME");
+    if (round >= 10) {
+        document.getElementById('finish-game-button').disabled=false;
         if (p1Score > compScore) {
             console.log("You Win!!!");
+            alert("Game Finished!! You Won!");
         } else if (compScore > p1Score)
-            console.log("You Lose");
+            alert("Game Finished!! You Lost Loser!");
         else if (compScore === p1Score)
-            console.log("It's a draw");
+            alert("Game Finished!! It's a draw");
     } else {
         //re-enable 'Compare Cards' button
         document.getElementById("compare-cards").disabled = false;
@@ -284,16 +300,16 @@ let modal = document.getElementById("how-to-play");
 let btn = document.getElementById("how-to-play-button");
 let closeBtn = document.getElementById("close-modal");
 
-btn.onclick = function() {
-  modal.style.display = "block";
+btn.onclick = function () {
+    modal.style.display = "block";
 }
 
-closeBtn.onclick = function() {
+closeBtn.onclick = function () {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
