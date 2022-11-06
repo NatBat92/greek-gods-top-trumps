@@ -36,6 +36,23 @@ h3 {
     border: 5px solid #230569;
 }
 
+#end-of-game {
+    border-radius: 25px;
+    background-color: #66a3f3;
+    border: 5px solid #230569;
+    display: none; /* Hidden by default */
+    position: absolute;
+    z-index: 1; /* Sit on top */
+    width: 30%; /* Full width */
+    height: 35%; /* Full height */
+    left: 35%;
+}
+
+#modal-content2 {
+    font-size: 150%;
+    font-family: 'GFS Neohellenic', sans-serif;
+}
+
 /* Game Area */
 
 .box {
@@ -139,6 +156,7 @@ h3 {
     height: 70%; /* Full height */
     left: 35%;
   }
+
   
   /* Modal Content/Box */
   .modal-content {

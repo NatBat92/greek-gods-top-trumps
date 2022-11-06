@@ -131,8 +131,6 @@ function GenerateHand() {
 //Checks to see if user has selected an attribute to compare
 function cardCheckTest() {
     cardCheck = document.querySelector('input[name="selection"]:checked');
-    console.log("cardCheck value is" + cardCheck);
-
     if (cardCheck == null) {
         alert("Please select an attribute!");
         document.getElementById('next-round-button').disabled=true;
@@ -208,7 +206,7 @@ function CompareCards() {
     document.getElementById("next-round").innerHTML = round;
     count++;
 
-    console.log(round);
+    //console.log(round);
 
     //Display computer card after player has compared cards
     document.getElementById("compPower").innerHTML = computerPower;
@@ -218,6 +216,26 @@ function CompareCards() {
 
     //Disable button once clicked so can't run round more than once
     document.getElementById("compare-cards").disabled = true;
+
+    //increment round count
+    if (round < 10){
+        round++;
+    } 
+    else{
+        round = round;
+    }
+    console.log("Debugging 1: " + round);
+
+    //disable 'Next' button once round 10 is reached
+    if (round === 10) {
+        let hideNext = document.getElementById("next-round-button");
+        hideNext.addEventListener('click', () => {
+            hideNext.style.display = 'none';
+        })
+
+        //document.getElementById('finish-game-button').disabled=false;
+    }
+
 }
 
 ////////////////////////////////////
@@ -234,33 +252,19 @@ newGame.addEventListener('click', () => {
 //////////////////////////////
 
 function nextRound() {
-    round++;
     document.getElementById("next-round").innerHTML = round;
-
     //clear radio buttons
     document.querySelector('input[name="selection"]:checked').checked = false;
 
-    if (round >= 9) {
-        let hideNext = document.getElementById("next-round-button");
-        hideNext.addEventListener('click', () => {
-            hideNext.style.display = 'none';
-        })
-    }
+    console.log("Debugging 2: " + round);
 
-    //if round exceeds 10, end game and display results
-    if (round >= 10) {
-        document.getElementById('finish-game-button').disabled=false;
-        if (p1Score > compScore) {
-            console.log("You Win!!!");
-            alert("Game Finished!! You Won!");
-        } else if (compScore > p1Score)
-            alert("Game Finished!! You Lost Loser!");
-        else if (compScore === p1Score)
-            alert("Game Finished!! It's a draw");
+    //if round exceeds 10, disable compare cards button
+    if (round > 10) {
+        document.getElementById("compare-cards").disabled = true;
     } else {
         //re-enable 'Compare Cards' button
         document.getElementById("compare-cards").disabled = false;
-
+        
         //display players new card
         document.getElementById("p1CardName").innerHTML = playerOneCardStats[count][0];
         playerPower = document.getElementById("p1Power").innerHTML = playerOneCardStats[count][1];
@@ -281,6 +285,38 @@ function nextRound() {
         document.getElementById("compTerror").innerHTML = "???";
         document.getElementById("compWisdom").innerHTML = "???";
     }
+}
+
+////////////////////////////////////
+////    Finish Game Button      ////
+////////////////////////////////////
+
+let modalFinish = document.getElementById("end-of-game");
+let btnFinish = document.getElementById("finish-game-button");
+let closeBtnFinish = document.getElementById("close-finish-modal");
+
+btnFinish.onclick = function () {
+    modalFinish.style.display = "block";
+    displayScore();
+}
+
+closeBtnFinish.onclick = function () {
+    modalFinish.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modalFinish) {
+        modalFinish.style.display = "none";
+    }
+}
+
+function displayScore() {
+    if (p1Score > compScore) {
+        document.getElementById("modal-content2").innerHTML = "<p>You Win!</p>"
+    } else if (compScore > p1Score)
+        document.getElementById("modal-content2").innerHTML = "<p>You Lose!</p>"
+    else if (compScore === p1Score)
+        document.getElementById("modal-content2").innerHTML = "<p>It's a draw!</p>"
 }
 
 ////////////////////////////////////
