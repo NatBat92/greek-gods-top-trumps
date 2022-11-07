@@ -151,6 +151,11 @@ I tested my game on a few platforms including Microsoft Edge, Chrome and Android
 
 ![screenshot of console.log use](assets/images/console-screenshot.png)
 
+## Problems Found and Fixed
+
+* Found an issue with Safari browser, when the buttons loaded the text was blue. To solve this I specified in the CSS to set the text colour to black.
+* Setting the text to black meant that it wasn't obvious which buttons were disabled, so I changed the disabled text colour to grey to show this.
+
 ## Validator Testing
 
 ### HTML

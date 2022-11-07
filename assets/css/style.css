@@ -9,7 +9,6 @@ h1 {
     font-size: 250%;
     text-align: center;
     margin: 0;
-    color: black;
 }
 
 h2 {
@@ -18,14 +17,12 @@ h2 {
     text-align: center;
     padding-bottom: 25px;
     margin: 0;
-    color: black;
 }
 
 h3 {
     font-family: 'GFS Neohellenic', sans-serif;
     font-size: 150%;
     text-align: center;
-    color: black;
 }
 
 img {
@@ -112,6 +109,7 @@ img {
     border-radius: 25%;
     padding: 15px;
     color: black;
+    
 }
 
 #buttons {
@@ -127,6 +125,10 @@ img {
     border-radius: 25%;
     padding: 15px;
     color: black;
+}
+
+button:disabled, #end-game:disabled, #compare-cards:disabled {
+    color: rgb(78, 75, 75);
 }
 
 /* modal styling */
@@ -212,7 +214,7 @@ footer {
 
 /* Media Queries */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     body {
         margin: 0;
         padding: 0;
