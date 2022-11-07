@@ -1,5 +1,5 @@
 // God  and mythical creature arrays
-let gods = new Array();
+let gods = [];
 
 gods[0] = ["Hades", 100, 65, 90, 25];
 gods[1] = ["Cronus", 50, 20, 30, 65];
@@ -22,7 +22,6 @@ gods[17] = ["Harpy", 70, 50, 90, 30];
 gods[18] = ["Phoenix", 70, 90, 25, 70];
 gods[19] = ["Siren", 100, 80, 90, 40];
 
-
 //Stores players score
 let p1Score = 0;
 let compScore = 0;
@@ -31,7 +30,6 @@ let playerOneCardStats = [];
 let computerCardStats = [];
 let i = 0;
 let j = 0;
-let k = "";
 let m = 0;
 let card = 0;
 let toggle;
@@ -223,7 +221,7 @@ function CompareCards() {
         let hideNext = document.getElementById("next-round-button");
         hideNext.addEventListener('click', () => {
             hideNext.style.display = 'none';
-        })
+        });
     }
     //if round 10 has been played, enable 'Finish Game' button to display results
     if (endGametoggle == 2){
@@ -238,7 +236,7 @@ function CompareCards() {
 let newGame = document.getElementById("new-game");
 newGame.addEventListener('click', () => {
     newGame.style.display = 'none';
-})
+});
 
 //////////////////////////////
 ////   Next Round Button  ////
@@ -290,25 +288,25 @@ let closeBtnFinish = document.getElementById("close-finish-modal");
 btnFinish.onclick = function () {
     modalFinish.style.display = "block";
     displayScore();
-}
+};
 
 closeBtnFinish.onclick = function () {
     modalFinish.style.display = "none";
-}
+};
 
 window.onclick = function (event) {
     if (event.target == modalFinish) {
         modalFinish.style.display = "none";
     }
-}
+};
 
 function displayScore() {
     if (p1Score > compScore) {
-        document.getElementById("modal-content2").innerHTML = "<p>You Win!</p>"
+        document.getElementById("modal-content2").innerHTML = "<p>You Win!</p>";
     } else if (compScore > p1Score)
-        document.getElementById("modal-content2").innerHTML = "<p>You Lose!</p>"
+        document.getElementById("modal-content2").innerHTML = "<p>You Lose!</p>";
     else if (compScore === p1Score)
-        document.getElementById("modal-content2").innerHTML = "<p>It's a draw!</p>"
+        document.getElementById("modal-content2").innerHTML = "<p>It's a draw!</p>";
 }
 
 ////////////////////////////////////
@@ -330,14 +328,14 @@ let closeBtn = document.getElementById("close-modal");
 
 btn.onclick = function () {
     modal.style.display = "block";
-}
+};
 
 closeBtn.onclick = function () {
     modal.style.display = "none";
-}
+};
 
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+};

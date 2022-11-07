@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap" rel="stylesheet">
-  <!--<script src="assets/js/game.js"></script>-->
   <title>Greek Gods Top Trumps</title>
 </head>
 
@@ -25,26 +24,26 @@
     <div id="how-to-play" class="modal">
       <h3>How to play:</h3>
       <div class="modal-content">
-      <ol id="instruction-list">
-        <li>Press the New Game button to start the game.</li>
-        <li>Each player will be given 10 random cards.</li>
-        <li>Select the attribute you think will beat your opponent, then click the 'Compare' button to reveal your
-          opponents card.</li>
-        <li>If you win the hand, a point will be added to your score, if you lose then a point will be given to your
-          opponent.</li>
-        <li>If a draw occurs, both players will be given a point.</li>
-        <li>There will be 10 rounds, at the end of the 10th round, the person with the highest score wins!</li>
-      </ol>
-      <button id="close-modal">Close</button>
+        <ol id="instruction-list">
+          <li>Press the New Game button to start the game.</li>
+          <li>Each player will be given 10 random cards.</li>
+          <li>Select the attribute you think will beat your opponent, then click the 'Compare' button to reveal your
+            opponents card.</li>
+          <li>If you win the hand, a point will be added to your score, if you lose then a point will be given to your
+            opponent.</li>
+          <li>If a draw occurs, both players will be given a point.</li>
+          <li>There will be 10 rounds, at the end of the 10th round, the person with the highest score wins!</li>
+        </ol>
+        <button id="close-modal">Close</button>
+      </div>
     </div>
-  </div>
 
-  <div id="end-of-game">
-    <h2>End of the game!</h2>
-    <div id="modal-content2">    
+    <div id="end-of-game">
+      <h2>End of the game!</h2>
+      <div id="modal-content2">
+      </div>
+      <button id="close-finish-modal">Close</button>
     </div>
-    <button id="close-finish-modal">Close</button>
-  </div>
   </section>
 
   <!--Players cards and playing area-->
@@ -55,7 +54,7 @@
         <td colspan="2" id="align-center">
           <h2> Round: </h2>
         </td>
-        <td>
+        <td colspan="2">
           <h2 id="next-round">0</h2>
         </td>
       </tr>
@@ -76,10 +75,12 @@
     </table>
 
     <nav id="button-container">
-      <button id="new-game" onclick="GenerateHand(); document.getElementById('compare-cards').disabled=false; document.getElementById('end-game').disabled=false">New Game</button>
+      <button id="new-game"
+        onclick="GenerateHand(); document.getElementById('compare-cards').disabled=false; document.getElementById('end-game').disabled=false">New
+        Game</button>
       <button class="blue-button" id="how-to-play-button">How-to-Play</button>
-      <button id="end-game" onclick="endGame()"> End Game </button>      
-      <button class="blue-button" id="compare-cards" onclick="cardCheckTest()">Compare</button>     
+      <button id="end-game" onclick="endGame()"> End Game </button>
+      <button class="blue-button" id="compare-cards" onclick="cardCheckTest()">Compare</button>
       <button class="blue-button" id="next-round-button" onclick="nextRound()">Next</button>
       <button class="blue-button" id="finish-game-button">Finish</button>
     </nav>
@@ -93,19 +94,23 @@
           <tbody>
             <tr>
               <th>Power: </th>
-              <td><input type="radio" class="radio-buttons" name="selection" id="power"><label for="power" id="p1Power">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="power"><label for="power"
+                  id="p1Power">???</label></td>
             </tr>
             <tr>
               <th>Magic: </th>
-              <td><input type="radio" class="radio-buttons" name="selection" id="magic"><label for="magic" id="p1Magic">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="magic"><label for="magic"
+                  id="p1Magic">???</label></td>
             </tr>
             <tr>
               <th>Terror: </th>
-              <td><input type="radio" class="radio-buttons" name="selection" id="terror"><label for="terror" id="p1Terror">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="terror"><label for="terror"
+                  id="p1Terror">???</label></td>
             </tr>
             <tr>
               <th>Wisdom: </th>
-              <td><input type="radio" class="radio-buttons" name="selection" id="wisdom"><label for="wisdom" id="p1Wisdom">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="wisdom"><label for="wisdom"
+                  id="p1Wisdom">???</label></td>
             </tr>
           </tbody>
         </table>
@@ -121,20 +126,24 @@
           <tbody>
             <tr>
               <th>Power: </th>
-              <td><input style="display:none" name="selection" id="Cpower"><label for="Cpower" id="compPower">???</label></td>
+              <td><input style="display:none" name="selection" id="Cpower"><label for="Cpower"
+                  id="compPower">???</label></td>
             </tr>
             <tr>
               <th>Magic: </th>
-              <td><input style="display:none" name="selection" id="Cmagic"><label for="Cmagic" id="compMagic">???</label></td>
+              <td><input style="display:none" name="selection" id="Cmagic"><label for="Cmagic"
+                  id="compMagic">???</label></td>
             </tr>
-            <tr>             
+            <tr>
               <th>Terror: </th>
-              <td><input style="display:none" name="selection" id="Cterror"><label for="Cterror" id="compTerror">???</label>
+              <td><input style="display:none" name="selection" id="Cterror"><label for="Cterror"
+                  id="compTerror">???</label>
               </td>
             </tr>
             <tr>
               <th>Wisdom: </th>
-              <td><input style="display:none" name="selection" id="Cwisdom"><label for="Cwisdom" id="compWisdom">???</label>
+              <td><input style="display:none" name="selection" id="Cwisdom"><label for="Cwisdom"
+                  id="compWisdom">???</label>
               </td>
             </tr>
           </tbody>
@@ -142,7 +151,7 @@
       </div>
     </div>
   </section>
-  
+
   <br>
 
   <img src="assets/images/border-single1.png" alt="blue banner that includes various greek artifacts">
