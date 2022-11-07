@@ -56,7 +56,7 @@
           <h2> Round: </h2>
         </td>
         <td>
-          <h2 id="next-round"></h2>
+          <h2 id="next-round">0</h2>
         </td>
       </tr>
       <tr>
@@ -76,12 +76,12 @@
     </table>
 
     <nav id="button-container">
-      <button id="new-game" input type="button" onclick="GenerateHand(); document.getElementById('compare-cards').disabled=false; document.getElementById('end-game').disabled=false">New Game</button>
+      <button id="new-game" onclick="GenerateHand(); document.getElementById('compare-cards').disabled=false; document.getElementById('end-game').disabled=false">New Game</button>
       <button class="blue-button" id="how-to-play-button">How-to-Play</button>
-      <button id="end-game" input type="button" onclick="endGame()" disabled="true"> End Game </button>      
-      <button class="blue-button" id="compare-cards" input type="button" disabled="true" onclick="cardCheckTest()">Compare</button>     
-      <button class="blue-button" id="next-round-button" input type="button" disabled="true" onclick="nextRound(); this.disabled=true">Next</button>
-      <button class="blue-button" id="finish-game-button" input type="button" disabled="true">Finish</button>
+      <button id="end-game" onclick="endGame()"> End Game </button>      
+      <button class="blue-button" id="compare-cards" onclick="cardCheckTest()">Compare</button>     
+      <button class="blue-button" id="next-round-button" onclick="nextRound()">Next</button>
+      <button class="blue-button" id="finish-game-button">Finish</button>
     </nav>
 
     <div id="p1-current">
@@ -89,23 +89,23 @@
       <div class="box">
         <br>
         <h3 id="p1CardName">????</h3>
-        <table class="card-table" cellspacing="1" cellpadding="1" border="0">
+        <table class="card-table">
           <tbody>
             <tr>
               <th>Power: </th>
-              <td><input type="radio" name="selection" id="power"><label for="power" id="p1Power">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="power"><label for="power" id="p1Power">???</label></td>
             </tr>
             <tr>
               <th>Magic: </th>
-              <td><input type="radio" name="selection" id="magic"><label for="magic" id="p1Magic">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="magic"><label for="magic" id="p1Magic">???</label></td>
             </tr>
             <tr>
               <th>Terror: </th>
-              <td><input type="radio" name="selection" id="terror"><label for="terror" id="p1Terror">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="terror"><label for="terror" id="p1Terror">???</label></td>
             </tr>
             <tr>
               <th>Wisdom: </th>
-              <td><input type="radio" name="selection" id="wisdom"><label for="wisdom" id="p1Wisdom">???</label></td>
+              <td><input type="radio" class="radio-buttons" name="selection" id="wisdom"><label for="wisdom" id="p1Wisdom">???</label></td>
             </tr>
           </tbody>
         </table>
@@ -117,32 +117,33 @@
       <div class="box">
         <br>
         <h3 id="compCardName">????</h3>
-        <table class="card-table" cellspacing="1" cellpadding="1" border="0">
+        <table class="card-table">
           <tbody>
             <tr>
               <th>Power: </th>
-              <td><input type="hidden" name="selection" id="Cpower"><label for="Cpower" id="compPower">???</label></td>
+              <td><input style="display:none" name="selection" id="Cpower"><label for="Cpower" id="compPower">???</label></td>
             </tr>
             <tr>
               <th>Magic: </th>
-              <td><input type="hidden" name="selection" id="Cmagic"><label for="Cmagic" id="compMagic">???</label></td>
+              <td><input style="display:none" name="selection" id="Cmagic"><label for="Cmagic" id="compMagic">???</label></td>
             </tr>
             <tr>             
               <th>Terror: </th>
-              <td><input type="hidden" name="selection" id="Cterror"><label for="Cterror" id="compTerror">???</label>
+              <td><input style="display:none" name="selection" id="Cterror"><label for="Cterror" id="compTerror">???</label>
               </td>
             </tr>
             <tr>
               <th>Wisdom: </th>
-              <td><input type="hidden" name="selection" id="Cwisdom"><label for="Cwisdom" id="compWisdom">???</label>
+              <td><input style="display:none" name="selection" id="Cwisdom"><label for="Cwisdom" id="compWisdom">???</label>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    </form>
   </section>
+  
+  <br>
 
   <img src="assets/images/border-single1.png" alt="blue banner that includes various greek artifacts">
 

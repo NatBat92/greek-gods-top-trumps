@@ -54,6 +54,17 @@ let computerWisdom;
 
 let count = 0;
 let round = 1;
+let endGametoggle = 0;
+let hidePlayerCards = document.getElementById("p1-current");
+let hideCompCards = document.getElementById("comp-current");
+
+//Set buttons to disable prior to game being initiated
+document.getElementById('end-game').disabled=true;
+document.getElementById('compare-cards').disabled=true;
+document.getElementById('next-round-button').disabled=true;
+document.getElementById('finish-game-button').disabled=true;
+hidePlayerCards.style.display = 'none';
+hideCompCards.style.display = 'none';
 
 /////////////////////////////////////////////////////////////////
 ////   Generates Hands of Cards for playerOne and Computer   ////
@@ -67,6 +78,9 @@ function GenerateHand() {
 
     document.getElementById("next-round").innerHTML = round;
 
+    hidePlayerCards.style.display = 'inline-block';
+    hideCompCards.style.display = 'inline-block';
+
     //Creates 10 random numbers for player one hand of cards between 0 and 19
     //These values correspond to the index value in gods array
     while (playerOneHand.size != 10) {
@@ -79,7 +93,6 @@ function GenerateHand() {
             playerOneHand.add(card);
         }
     }
-    console.log(playerOneHand); //Used For Debugging Purposes
 
     //Using above random numbers, corresponding index values of Gods array added to PlayerOneCards array
     for (j = 0; j < 10; j++) {
@@ -105,16 +118,12 @@ function GenerateHand() {
             computerHand.add(m);
         }
     }
-    console.log(computerHand); //Used For Debugging Purposes
 
     //Using above random numbers, corresponding index values of Gods array added to ComputerHands array
     for (j = 0; j < 10; j++) {
         cardNoCo = [...computerHand][j];
         computerCardStats.push(gods[cardNoCo]);
     }
-
-    console.log(playerOneCardStats); //Used For Debugging Purposes
-    console.log(computerCardStats); //Used For Debugging Purposes
 
     //set computers first card
     document.getElementById("compCardName").innerHTML = computerCardStats[0][0];
@@ -143,60 +152,45 @@ function cardCheckTest() {
 function CompareCards() {
     //If Power selected 
     if (document.getElementById("power").checked) {
-        console.log("You selected Power");
-        console.log(computerMagic);
-        console.log(playerMagic);
         if (playerPower > computerPower) {
-            console.log("You win!! :) ");
             p1Score++;
         } else if (playerPower == computerPower) {
-            console.log("Draw! ");
             p1Score++;
             compScore++;
         } else {
-            console.log("You lose :(");
             compScore++;
         }
     }
     //If Magic selected
     else if (document.getElementById("magic").checked) {
         if (playerMagic > computerMagic) {
-            console.log("You win!! :) ");
             p1Score++;
         } else if (playerMagic == computerMagic) {
-            console.log("Draw! ");
             p1Score++;
             compScore++;
         } else {
-            console.log("You lose :(");
             compScore++;
         }
     }
     //If Terror selected
     else if (document.getElementById("terror").checked) {
         if (playerTerror > computerTerror) {
-            console.log("You win!! :) ");
             p1Score++;
         } else if (playerTerror == computerTerror) {
-            console.log("Draw! ");
             p1Score++;
             compScore++;
         } else {
-            console.log("You lose :(");
             compScore++;
         }
     }
     //If Wisdom selected
     else if (document.getElementById("wisdom").checked) {
         if (playerWisdom > computerWisdom) {
-            console.log("You win!! :) ");
             p1Score++;
         } else if (playerWisdom == computerWisdom) {
-            console.log("Draw! ");
             p1Score++;
             compScore++;
         } else {
-            console.log("You lose :(");
             compScore++;
         }
     }
@@ -205,8 +199,6 @@ function CompareCards() {
     document.getElementById("comp-score").innerHTML = compScore;
     document.getElementById("next-round").innerHTML = round;
     count++;
-
-    //console.log(round);
 
     //Display computer card after player has compared cards
     document.getElementById("compPower").innerHTML = computerPower;
@@ -224,18 +216,19 @@ function CompareCards() {
     else{
         round = round;
     }
-    console.log("Debugging 1: " + round);
 
     //disable 'Next' button once round 10 is reached
-    if (round === 10) {
+    if (round == 10) {
+        endGametoggle++;
         let hideNext = document.getElementById("next-round-button");
         hideNext.addEventListener('click', () => {
             hideNext.style.display = 'none';
         })
-
-        //document.getElementById('finish-game-button').disabled=false;
     }
-
+    //if round 10 has been played, enable 'Finish Game' button to display results
+    if (endGametoggle == 2){
+        document.getElementById('finish-game-button').disabled=false;
+    }
 }
 
 ////////////////////////////////////
@@ -256,14 +249,13 @@ function nextRound() {
     //clear radio buttons
     document.querySelector('input[name="selection"]:checked').checked = false;
 
-    console.log("Debugging 2: " + round);
-
     //if round exceeds 10, disable compare cards button
     if (round > 10) {
         document.getElementById("compare-cards").disabled = true;
     } else {
         //re-enable 'Compare Cards' button
         document.getElementById("compare-cards").disabled = false;
+        document.getElementById("next-round-button").disabled = true;
         
         //display players new card
         document.getElementById("p1CardName").innerHTML = playerOneCardStats[count][0];
